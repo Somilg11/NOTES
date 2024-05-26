@@ -1,0 +1,81 @@
+//typescript notes ->
+
+--typescript is just but strict javascript
+
+--use export {} at end of file to avoid errors
+
+//number 
+let userId: number = 87345.387  {no specific type for float variabes, denoted by just number}
+anothe way -> userId.toFixed()
+
+//boolean 
+let isloggedIn: boolean = false
+
+//any keyword
+when typescript cannt find value what to be put on to a variable, it just refered to its type as 'any'
+--we can use the compiler function 'noImplicitAny' to flag any implicit 'any' as an error.
+
+//functions in typescript
+function addTwo(num: number){
+    return num+2
+}
+addTwo(5)
+function signUp(name: string, email: string, isPaid: boolean){}
+
+//arrow function
+const getHello = (s: string): string => {
+    return ""
+}
+
+//error handling function
+function consoleError(errmsg: string): void{
+    console.log(errmsg);
+}
+function handleError(errmsg: string): never{
+    throw new Error(errmsg);
+}
+
+//Objects
+const User = {
+    name: "xyz",
+    email: "xyz@co.dev",
+    isActive: true
+}
+const createUser({name: string, isPaid: boolean}){}
+createUser({name: "abc", isPaid: false})
+
+function createCourse():{name: string, price: number}{
+    return {name: "reactjs", price: 499}
+}
+
+//type aliases
+type User = {
+    name: string;
+    email: strring;
+    isActive: boolean
+}
+function createUser(user: User): User{
+    return {name: "", email: "", isActive: true}
+}
+createUser({name: "", email: "", isActive: true})
+
+//readonly, ?, usercase
+type User = {
+    readonly _id: string
+    name: string;
+    email: strring;
+    isActive: boolean
+    creadcardDetails?: number  -> '?' make sthis functionality optional to fill
+}
+export.__esModule = true;
+
+//Arrays in typescript
+const array: string[] = []  -> can also be defined as : const array: Array<number> = []
+array.push("hello")
+
+const MLModels: number[][] = [
+    [255,255,255],
+    []
+]
+
+//
