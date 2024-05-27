@@ -78,4 +78,34 @@ const MLModels: number[][] = [
     []
 ]
 
-//
+//Union type
+let score: number | string = 33
+score = 44
+score = "55"
+
+const data: (string | number)[] = ["1","2",3]
+
+//tuples
+type User = [number,string]
+const newUser = [112, "xyz@google.com"]
+newUser[1] = "hc.com"
+newUser.push(true)
+
+//enums -> to restrict user choice
+enum SeatChoice {
+    AISLE,
+    MIDDLE,
+    WINDOW
+}
+const hcSeat = SeatChoice.AISLE
+
+//Interface -> loose form of class
+interface User{
+    email: string,
+    userId: number
+    startTrail() => string
+}
+const somil: User = {email: "s@s.com", userId: 2789,
+startTrail: () => {
+    return "trail started"
+}}
