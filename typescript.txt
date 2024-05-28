@@ -109,3 +109,73 @@ const somil: User = {email: "s@s.com", userId: 2789,
 startTrail: () => {
     return "trail started"
 }}
+
+0000---- <Rest is functional application>
+
+// class User{
+//     email: string
+//     name: string
+//     city: string = ""
+//     constructor(email: string, name: string){
+//         this.email = email;
+//         this.name = name
+//     }
+// }
+// const somil = new User("s@sgoogle.com", "somil")
+// somil.city = "delhi";
+
+// --- getters and setters, public , private, protected 
+
+// --- more on interface
+// interface TakePhoto{
+//     cameraMode: string
+//     filter: string
+//     burst: number
+// }
+// class Instagram implements TakePhoto{
+//     constructor(
+//         public cameraMode: string,
+//         public filter: string,
+//         public burst: number
+//     ){}
+// }
+
+// ---abstract class
+
+// ---Generics
+// function identityOne(val: boolean | number): boolean | number{
+//     return val
+// }
+// function identityThree<Type>(val: Type): Type {
+//     return val
+// }
+
+// ---Narrowing & type Predicates
+// function detectType(val: number | string){
+//     if(typeof val === "string"){
+//         return val.toLowerCase()
+//     }
+//     return val + 3 
+// }
+
+// ---discriminated union & exhaustiveness checking
+interface Circle{
+    kind: "circle",
+    radius: number
+}
+interface Square{
+    kind: "square",
+    side: number
+}
+interface Rectangle{
+    kind: "rectangle",
+    length: number,
+    width: number
+}
+type  Shape = Circle | Square
+function fetTrueShape(shape: Shape){
+    if(shape.kind === "circle"){
+        return Math.PI * shape.radius ** 2
+    }
+    return shape.side * shape.side
+}

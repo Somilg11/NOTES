@@ -1,1 +1,42 @@
 // React Notes
+React Components
+JSX Working -> Javascript syntax extension
+Rendering List
+useState
+useRef
+useEffect
+Passing Props
+Event Handling , etc...
+
+{array.map((user)=>{return <h2>{user}</h2>})}  -> to print all the elements of an array
+conditional rendering -> use of if else statement based on some input
+--event handling--
+//let x = 0;  ---> react interface change only when the state is changing, thus we use 'useState' variable
+const [x,setx] = useState(0);
+const btnClick = () => {
+    console.log("Clicked");
+    //x++;
+    setx(x+1)  ---> this function will update the value of x
+    console.log(x);
+}
+return(
+    <div>
+      {x}
+      <button onClick={()=>{btnClick()}}>Click Me</button>
+    </div>
+)
+--how to pass the data from one component to other component--
+//to pass the variable we use props -> <firstComponent data={x}/>
+in firstComponent.jsx -> 
+const firstComponent = (props) => {    ---> can also be passed as ({data})
+    return(
+        <div>
+            {props.data}  ---> {data}
+        </div>
+    )
+}
+--how to pass a function using props--
+<firstComponent data={x} fn={setx}/>
+const firstComponent = ({data,fn}) => {}
+--how to use useRef to get any element--
+//it is used to take reference from any element, eg. display textbox input data in console
