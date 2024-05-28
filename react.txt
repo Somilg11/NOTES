@@ -40,3 +40,10 @@ const firstComponent = (props) => {    ---> can also be passed as ({data})
 const firstComponent = ({data,fn}) => {}
 --how to use useRef to get any element--
 //it is used to take reference from any element, eg. display textbox input data in console
+const inputRef = useRef(null);
+return (
+    <div>
+    <input ref={inputRef} type="text" />
+    <button onClick={()=>{console.log(inputRef.current.value);}}></button>
+    </div>
+)
