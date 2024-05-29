@@ -47,3 +47,13 @@ return (
     <button onClick={()=>{console.log(inputRef.current.value);}}></button>
     </div>
 )
+
+// --- Hooks ---
+Hooks are the special function, that allows us to use state and other react fucntional components
+useStateuseEffect
+useRefuseMemo
+useCallback
+useContext
+useReducer
+useLayoutEffect
+custom hooks
