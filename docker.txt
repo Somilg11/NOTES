@@ -55,3 +55,14 @@ services:
       - "6379:6379"
 
 -----------------------------
+sudo docker compose update -> to update
+sudo docker compose down -> to remove everything
+sudo docker compose up -d  -> detached mode to allow running in background
+
+--Docker Networking a-Bridge b-Host
+--Volume Mounting
+--Efficient Caching in layers
+--Docker Multi-Stage Builds
+
+docker network inspect
+docker network create -d bridge <name>
