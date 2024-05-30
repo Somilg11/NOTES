@@ -1,0 +1,57 @@
+//Docker Notes
+when we have multiple environment, its hard to replicate it, thus we use Docker
+--installation of Docker CLI and Desktop
+--understanding Images v/s container
+--running ubuntu image in container
+--multiple containers
+--port mappings
+--environtment variables
+--Dockerization of Node.js Application a-Dockerfile b-caching layers c-pushing to Hub
+--Docker Compose a-Service b-PortMapping c-Env Variables
+
+
+ctrl+d to exist 
+
+docker run -it <image_name>
+docker exec <container_name>
+docker run -it -p 8025:8025 -p 1025:1025 mailhog/mailhog
+environment variables -> docker run -it -p 8025:8025 -p 1025:1025 -e key=value -e key=value mailhog/mailhog
+
+-------------------------- Dockerization
+
+FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get upgrade -y
+RUN apt-get install -y nodejs
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+COPY main.js main.js
+
+RUN npm install
+
+ENTRYPOINT [ "node", "main.js" ]
+
+-------------------------------------- Docker compose yml
+
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres # hub.docker.com
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: review
+      POSTGRES_PASSWORD: password
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+-----------------------------
