@@ -1,0 +1,18 @@
+//python notes ->
+
+--functions
+basic fucntion syntax
+function with multiple parameters
+polymorphism in functions
+function returning multiple values
+default parameter value
+lambda function
+function with *args
+fucntion with **kwargs
+generator function with yield
+Recursive Fucntion
+
+def square(number):
+    return number ** 2
+ans = square(4)
+print(ans)

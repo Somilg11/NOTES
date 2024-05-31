@@ -1,0 +1,33 @@
+//Fundamentals of Javascript
+//arrays and objects
+//fucntions return
+//async js coding
+//foreach map filter find indexof
+//objects
+
+let arr = [1,2,3];
+arr.forEach(function(val){
+    console.log(val);
+})
+
+let newarr = arr.map(function(val){
+    return val;
+})
+console.log(newarr);
+
+arr.filter(function(val){
+    if(val > 1) return true;
+})
+
+arr.find(function(val){
+    if(val == 1) return true;
+})
+
+console.log(arr.indexof(3))
+
+var obj = {
+    name: "abc",
+    age: 20
+}
+console.log(obj.name)
+Object.freeze(obj);
