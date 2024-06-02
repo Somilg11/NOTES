@@ -31,3 +31,14 @@ var obj = {
 }
 console.log(obj.name)
 Object.freeze(obj);
+
+async function abcd(){
+    var blob = await fetch(``);
+    var ans = await blob.json();
+    console.log(ans.results)
+}
+----------------------------------------
+//node.js basics  -> Javascript runtime environment
+//working with modules
+//file system operations
+//understanding http module
