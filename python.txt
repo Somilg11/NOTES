@@ -15,4 +15,37 @@ Recursive Fucntion
 def square(number):
     return number ** 2
 ans = square(4)
-print(ans)
+    print(ans)
+
+cube = lambda x: x**3
+    print(cube(4))
+
+def sum_all(*args):
+    return sum(args)
+printf(sum_all(1,2))
+printf(sum_all(1,2,3,4,5))
+
+def print_kwargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+print_kwargs(name="xyz", power="abc")
+
+--scopes and closure
+def f1():
+    x = 88
+    def f2():
+        print(x)
+    return f2
+myResult = f1()
+myResult()
+
+def chaicoder(num):
+    def actual(x):
+        return x ** num
+    return actual
+f = chaicoder(2)
+g = chaicoder(3)
+print(f(3)) -> 9
+print(g(3)) -> 27
+
+--Objects Orientation Programming

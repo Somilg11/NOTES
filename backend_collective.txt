@@ -42,3 +42,6 @@ async function abcd(){
 //working with modules
 //file system operations
 //understanding http module
+
+const fs = require('fs');
+
