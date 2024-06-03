@@ -78,3 +78,27 @@ app.listen(3000);
 
 npm i nodemon -get
 nodemon script.js(file name) or npm nodemon scriptjs(file name)
+
+const express = require("express");
+const app = express();
+app.use(function(req, res, next){
+    console.log('middleware running');
+    next();
+})
+app.get("/profile", function(req, res){
+    res.send("yess world")
+})
+app.listen(3000);
+
+app.use((err,req,res.next) => {
+    console.log(err.stack);
+    res.status(500).send("Something went wrong")
+})
+----------------------------------
+//form handling, sessions and cookies
+npm i cookie-parser
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+----------------------------------
+//ejs, dynamic routing, initializing projects
