@@ -45,3 +45,36 @@ async function abcd(){
 
 const fs = require('fs');
 
+http & https - hyper text transfer protocol (secure)
+const http = require('http');
+const server = http.createServer(function(req,res){
+    res.end("hello world");
+})
+server.listen(3000);
+-------------------------------------
+//npm understanding
+//understanding node_modules
+//dependencies  -- packages and dependencies
+//dev dependencies  --  only used in development not after completion
+//scripts - understanding default scripts PATH and custom scripts
+
+-------------------------------------
+//express.js framework
+//setting up basic application
+//routing
+//middlewares
+//request and response handling
+//error handling
+
+const express = require('express');
+const app = express();
+app.get("/", function(req, res){
+    res.send("hello world");
+})
+app.get("/profile", function(req, res){
+    res.send("yess world")
+})
+app.listen(3000);
+
+npm i nodemon -get
+nodemon script.js(file name) or npm nodemon scriptjs(file name)
