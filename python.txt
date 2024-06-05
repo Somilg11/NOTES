@@ -60,8 +60,21 @@ class inheritance and isinstance() function
 multiple Inheritance
 
 class Car:
-    def __init__(self,userbrand, usermodel):
-        self.brand = userbrand
-        self.model = usermodel
+    def __init__(self,brand, model):
+        self.brand = brand
+        self.model = model  
+
+        def full_name(self):
+            return f"{self.brand} {self.model}"
+class ElectricCar(Car):
+    def __init__(self, brand, model, battery_size):
+        super().__init___(brand, model)
+        self.battery_size = battery_size
+
 my_car = Car("Toyota", "Corolla")
 print(my_car.brand)
+print(my_car.full_name())
+my_tesla = ElectricCar("Tesla", "Model5", "85KWH")
+print(my_tesla.full_name())
+
+//if we use double underscore before a variable it becomes private
