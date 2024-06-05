@@ -104,4 +104,22 @@ app.use(express.urlencoded({ extended: true}));
 //ejs, dynamic routing, initializing projects
 small project - notepad, to use above knowledge
 ----------------------------------
-//
+//Data Storage
+//types of dbs - SQL | NoSQL 
+//NoSQL - mongoDB
+//terminologies - collections, documents, schemas, keys, models
+
+BACKEND - application server | database server
+database -> collection -> documents
+mongoose.connect -> database create
+model create -> collection
+CREATE -> document
+------------------------------------
+const mongoose = require('mongoose');
+mongoose.connect(`mongodb://127.0.0.1:27017/mongopractice`);
+const userSchema = mongoose.Schema({
+    name: String,
+    username: String,
+    email: String
+})
+module.exports = mongoose.model("user", userSchema);
