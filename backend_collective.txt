@@ -115,6 +115,7 @@ mongoose.connect -> database create
 model create -> collection
 CREATE -> document
 ------------------------------------
+//mongoDB
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb://127.0.0.1:27017/mongopractice`);
 const userSchema = mongoose.Schema({
@@ -123,3 +124,30 @@ const userSchema = mongoose.Schema({
     email: String
 })
 module.exports = mongoose.model("user", userSchema);
+------------------------------------
+//authentication and authorization
+//cookies and sessions
+//encryption and decryption
+//jwt and jwt data Storage
+
+npm i jsonwebtoken bcrypt
+
+const bcrypt = require('bcrypt')
+app.get("/", function(req,res){
+    bcrypt.genSalt(10, fucntion(err, salt){
+        bcrypt.hash("jkshvksya", salt, function(err, hash){
+            console.loh(hash);
+        });
+    });
+})
+
+const jwt = require('jsonwebtoken');
+app.get("/", function(req,res){
+    let token = jwt.sign({email: "abc@gmail.com"}, "secret")
+    res.cookie("token", token);
+    res.send("done");
+})
+app.get("/", function(req,res){
+    let data = jwt.verify(req.cookies.token, "secret");
+    console.log(data);
+})
