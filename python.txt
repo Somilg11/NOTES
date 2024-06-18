@@ -54,8 +54,8 @@ class method and self
 inheritance
 encapsulation
 class variable
-static method
-property decorators
+static method - a method that belongs to a class rather than instance of class
+property decorators - to make it readonly
 class inheritance and isinstance() function
 multiple Inheritance
 
@@ -66,6 +66,10 @@ class Car:
 
         def full_name(self):
             return f"{self.brand} {self.model}"
+
+        @staticmethod --->  #decorators
+        def general_description():
+            return "Car are means of transport"
 class ElectricCar(Car):
     def __init__(self, brand, model, battery_size):
         super().__init___(brand, model)
@@ -78,3 +82,17 @@ my_tesla = ElectricCar("Tesla", "Model5", "85KWH")
 print(my_tesla.full_name())
 
 //if we use double underscore before a variable it becomes private
+
+class Battery:
+    def battery_info(self):
+        return "this is battery"
+class Engine:
+    def engine_info(self):
+        return "this is engine"
+class ElectricCarTwo(Battery, Engine, Car):
+    pass
+my_new_tesla = ElectricCarTwo("Tesla", "Modle S")
+print(my_new_tesla.engine_info())
+print(my_new_tesla.battery_info())
+
+--More on Decorators
