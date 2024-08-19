@@ -1,1 +1,6 @@
 // rust notes ->
+
+rustc --version 
+rustup update
+rustup self uninstall
+rustup doc
