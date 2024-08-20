@@ -4,3 +4,20 @@ rustc --version
 rustup update
 rustup self uninstall
 rustup doc
+
+rustfmt main.rs - to format rush file(kinda like pretrier)
+
+to run -
+rustc main.rs
+.\main.exe
+
+TOML(Tom's Obvious,Minimal Language)
+
+In rust packages of code is reffered to as 'crates'
+
+cargo new hello_cargo
+cargo build - (default build is debug build, thus it generates deep inside)
+./target/debug/hello_cargo
+we can use , cargo run , instead of above to run
+cargo check - this command quickly checks your code to make sure it compiles but doesn't produce an executable
+cargo build --release(only when ready to release in production)
