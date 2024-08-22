@@ -21,3 +21,8 @@ cargo build - (default build is debug build, thus it generates deep inside)
 we can use , cargo run , instead of above to run
 cargo check - this command quickly checks your code to make sure it compiles but doesn't produce an executable
 cargo build --release(only when ready to release in production)
+
+The prelude is the list of things the Rust automatically includes in the program.
+use std::io;
+
+cargo doc --open
