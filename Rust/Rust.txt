@@ -31,3 +31,14 @@ variables and mutability
 constants (need to specify type, can be declared in global scope, can be set to fixed value only-not the result of some value)
 shadowing - even though variables are mutable, but one can't change it's data type, shadowing allows it to do so
 
+Data Type -
+Rust is statically typed Language - we must add a type anotation
+Scalar type -
+signed can be negative also, unsigned can not be negative (signed numbers are stored using 2's complement)
+{ -(2^n-1) to (2^n-1)-1 }
+i8 range = -128 to 127
+u8 range = 0 to 255
+checked add, overflowing add - to check some overflowing condition
+f32 and f64 (default) are floating type
+Compound type -
+Tuple, Array, vectors
