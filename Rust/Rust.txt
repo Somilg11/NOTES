@@ -42,3 +42,12 @@ checked add, overflowing add - to check some overflowing condition
 f32 and f64 (default) are floating type
 Compound type -
 Tuple, Array, vectors
+
+rest all on docs, --basics 
+
+Ownership --
+(Garbage collector) --manual
+A scope is the range within the program for which an item is valid.
+
+In rust string is madeup of three parts - 
+a pointer to the memory that holds the content of the string, a length, and a capacity
