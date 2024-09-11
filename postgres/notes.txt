@@ -1,0 +1,43 @@
+/-> some commmands
+
+SELECT dataname FROM pg_database
+
+to create database - 
+create database (dbname);
+
+\d table_name - to show table or db_name to describe database
+
+\l - to list all previous databases
+
+\c (dbname); - to connect to a database (change or switch)
+
+drop database (dbname); - to delete particular database
+
+CRUD operation - create, read, update, delete
+
+// creating table - 
+create table (table_name)(
+    id int,
+    name varchar(100),
+    city varchar(100)
+);
+// adding data into table - 
+insert into (table_name)(id, name, city) values (101, 'xyz', 'Delhi');
+// reading data from table -
+select * from (table_name);
+// updating the data -
+update (table_name) set city='Bangalore' where id=2;
+// deleting data - 
+delete from (table_name) where name='xyz';
+
+some issues - duplicate ids, null values
+
+constraints- primary key, not null, default, serial, unique
+data type -> numeric(int, double, float, ), string, date, boolean
+constraints -> rule applied to a column
+primary key -> a table can only have one primary key (unique)
+default value -> alongside not null
+auto increment - serial
+
+data refining - 
+clauses -> where, distinct, order by, limit, like
